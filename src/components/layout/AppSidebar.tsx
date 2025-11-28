@@ -9,14 +9,11 @@ import {
   Shield,
   ScrollText,
   Activity,
-<<<<<<< HEAD
-=======
   LogOut,
   Users,
   Key,
   Clock,
   Settings, // Import Settings icon
->>>>>>> master
 } from "lucide-react";
 import {
   Sidebar,
