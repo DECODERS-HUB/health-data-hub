@@ -4,8 +4,6 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-<<<<<<< HEAD
-=======
 
 /**
  * Generates a secure random password.
@@ -35,4 +33,3 @@ export function generateRandomPassword(length: number = 12): string {
 
   return password;
 }
->>>>>>> master

@@ -3,12 +3,6 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-<<<<<<< HEAD
-import { AppLayout } from "./components/layout/AppLayout";
-import Landing from "./pages/Landing";
-import CommandCenter from "./pages/CommandCenter";
-import Facilities from "./pages/Facilities";
-=======
 import { AuthProvider } from "./hooks/use-auth";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { AppLayout } from "./components/layout/AppLayout";
@@ -18,19 +12,12 @@ import Register from "./pages/Register";
 import CommandCenter from "./pages/CommandCenter";
 import Facilities from "./pages/Facilities";
 import FacilityDetails from "./pages/FacilityDetails";
->>>>>>> master
 import Interoperability from "./pages/Interoperability";
 import DataQuality from "./pages/DataQuality";
 import Developer from "./pages/Developer";
 import Governance from "./pages/Governance";
 import Audit from "./pages/Audit";
 import SystemHealth from "./pages/SystemHealth";
-<<<<<<< HEAD
-import NotFound from "./pages/NotFound";
-
-const queryClient = new QueryClient();
-
-=======
 import FacilityDashboard from "./pages/FacilityDashboard";
 import DeveloperDashboard from "./pages/DeveloperDashboard";
 import UserManagement from "./pages/UserManagement";
@@ -39,7 +26,7 @@ import Unauthorized from "./pages/Unauthorized";
 import MoHSignup from "./pages/MoHSignup";
 import RegistrationRequests from "./pages/RegistrationRequests";
 import ProfileSettings from "./pages/ProfileSettings";
-import Settings from "./pages/Settings"; // Import new Settings page
+import Settings from "./pages/Settings";
 
 const queryClient = new QueryClient();
 
@@ -50,29 +37,12 @@ const DEVELOPER_ROLES = ["Developer"];
 const SHARED_ROLES = ["MoH", "FacilityAdmin", "Developer"];
 const MOH_FACILITY_ROLES = ["MoH", "FacilityAdmin"];
 
->>>>>>> master
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
-<<<<<<< HEAD
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route element={<AppLayout />}>
-            <Route path="/dashboard" element={<CommandCenter />} />
-            <Route path="/facilities" element={<Facilities />} />
-            <Route path="/interoperability" element={<Interoperability />} />
-            <Route path="/data-quality" element={<DataQuality />} />
-            <Route path="/developer" element={<Developer />} />
-            <Route path="/governance" element={<Governance />} />
-            <Route path="/audit" element={<Audit />} />
-            <Route path="/health" element={<SystemHealth />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-=======
         <AuthProvider>
           <Routes>
             <Route path="/" element={<Landing />} />
@@ -110,10 +80,9 @@ const App = () => (
                 {/* Shared Routes (Accessible by multiple roles) */}
                 <Route path="/shared" element={<ProtectedRoute allowedRoles={SHARED_ROLES} />}>
                   <Route path="audit" element={<Audit />} />
-                  {/* Developer portal is shared but also has a dedicated developer route */}
                   <Route path="developer-portal" element={<Developer />} /> 
-                  <Route path="account" element={<ProfileSettings />} /> {/* Renamed Profile Route */}
-                  <Route path="settings" element={<Settings />} /> {/* New Settings Route */}
+                  <Route path="account" element={<ProfileSettings />} />
+                  <Route path="settings" element={<Settings />} />
                 </Route>
                 
                 {/* Shared MoH/Facility Admin Routes */}
@@ -128,14 +97,9 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
->>>>>>> master
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
 
-<<<<<<< HEAD
 export default App;
-=======
-export default App;
->>>>>>> master
