@@ -5,11 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Copy, Key, Plus, Book, Code2, Webhook } from "lucide-react";
 import { toast } from "sonner";
-<<<<<<< HEAD
-=======
 import { SandboxConsole } from "@/components/developer/SandboxConsole";
 import { useEffect } from "react";
->>>>>>> master
 
 const apiKeys = [
   { id: 1, name: "Production Key - EMR Integration", key: "hkit_prod_abc123...", created: "2024-11-01", lastUsed: "2 min ago", status: "active" },
@@ -49,20 +46,15 @@ const samplePayload = `{
 }`;
 
 const Developer = () => {
-<<<<<<< HEAD
-=======
   useEffect(() => {
     document.title = "Developer Portal | Hkit Portal";
   }, []);
 
->>>>>>> master
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     toast.success("Copied to clipboard");
   };
 
-<<<<<<< HEAD
-=======
   const handleGenerateKey = () => {
     toast.info("Action: Generating new API key (Mock Action)");
   };
@@ -86,8 +78,6 @@ const Developer = () => {
   const handleViewDocs = (title: string) => {
     toast.info(`Action: Navigating to Documentation: ${title}`);
   };
-
->>>>>>> master
   return (
     <div className="p-6 space-y-6">
       <div>
@@ -106,11 +96,7 @@ const Developer = () => {
         <TabsContent value="keys" className="space-y-4 mt-6">
           <div className="flex justify-between items-center">
             <p className="text-sm text-muted-foreground">Manage your API authentication keys</p>
-<<<<<<< HEAD
-            <Button className="bg-primary hover:bg-primary/90">
-=======
             <Button className="bg-primary hover:bg-primary/90" onClick={handleGenerateKey}>
->>>>>>> master
               <Plus className="w-4 h-4 mr-2" />
               Generate New Key
             </Button>
@@ -143,16 +129,12 @@ const Developer = () => {
                       <span className="text-muted-foreground">Last used: {key.lastUsed}</span>
                     </div>
                   </div>
-<<<<<<< HEAD
-                  <Button variant="outline" size="sm" className="border-border ml-4">
-=======
                   <Button 
                     variant="destructive" 
                     size="sm" 
                     className="border-destructive/50 ml-4"
                     onClick={() => handleRevokeKey(key.id)}
                   >
->>>>>>> master
                     Revoke
                   </Button>
                 </div>
@@ -163,38 +145,26 @@ const Developer = () => {
 
         <TabsContent value="docs" className="mt-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-<<<<<<< HEAD
-            <Card className="p-6 border-border hover:border-primary/50 transition-colors cursor-pointer">
-=======
             <Card 
               className="p-6 border-border hover:border-primary/50 transition-colors cursor-pointer"
               onClick={() => handleViewDocs("Getting Started")}
             >
->>>>>>> master
               <Book className="w-8 h-8 text-primary mb-3" />
               <h3 className="font-semibold text-foreground mb-2">Getting Started</h3>
               <p className="text-sm text-muted-foreground">Learn the basics of Hkit API integration</p>
             </Card>
-<<<<<<< HEAD
-            <Card className="p-6 border-border hover:border-primary/50 transition-colors cursor-pointer">
-=======
             <Card 
               className="p-6 border-border hover:border-primary/50 transition-colors cursor-pointer"
               onClick={() => handleViewDocs("FHIR Resources")}
             >
->>>>>>> master
               <Code2 className="w-8 h-8 text-primary mb-3" />
               <h3 className="font-semibold text-foreground mb-2">FHIR Resources</h3>
               <p className="text-sm text-muted-foreground">Complete FHIR R4 resource documentation</p>
             </Card>
-<<<<<<< HEAD
-            <Card className="p-6 border-border hover:border-primary/50 transition-colors cursor-pointer">
-=======
             <Card 
               className="p-6 border-border hover:border-primary/50 transition-colors cursor-pointer"
               onClick={() => handleViewDocs("Webhooks Guide")}
             >
->>>>>>> master
               <Webhook className="w-8 h-8 text-primary mb-3" />
               <h3 className="font-semibold text-foreground mb-2">Webhooks Guide</h3>
               <p className="text-sm text-muted-foreground">Real-time event subscriptions</p>
@@ -222,41 +192,14 @@ const Developer = () => {
         <TabsContent value="sandbox" className="mt-6">
           <Card className="p-6 border-border">
             <h3 className="font-semibold text-foreground mb-4">API Testing Console</h3>
-<<<<<<< HEAD
-            <div className="space-y-4">
-              <div>
-                <label className="text-sm text-muted-foreground mb-2 block">Endpoint</label>
-                <Input
-                  placeholder="https://api.hkit.kwara.gov.ng/fhir/Patient"
-                  className="bg-secondary border-border"
-                />
-              </div>
-              <div>
-                <label className="text-sm text-muted-foreground mb-2 block">Request Body</label>
-                <textarea
-                  className="w-full h-64 bg-secondary border border-border rounded-lg p-4 text-sm font-mono text-foreground resize-none"
-                  placeholder="Enter FHIR resource JSON..."
-                />
-              </div>
-              <div className="flex gap-2">
-                <Button className="bg-primary hover:bg-primary/90">Send Request</Button>
-                <Button variant="outline" className="border-border">Clear</Button>
-              </div>
-            </div>
-=======
             <SandboxConsole />
->>>>>>> master
           </Card>
         </TabsContent>
 
         <TabsContent value="webhooks" className="space-y-4 mt-6">
           <div className="flex justify-between items-center">
             <p className="text-sm text-muted-foreground">Subscribe to real-time FHIR events</p>
-<<<<<<< HEAD
-            <Button className="bg-primary hover:bg-primary/90">
-=======
             <Button className="bg-primary hover:bg-primary/90" onClick={handleAddWebhook}>
->>>>>>> master
               <Plus className="w-4 h-4 mr-2" />
               Add Webhook
             </Button>
@@ -283,12 +226,6 @@ const Developer = () => {
                     </div>
                   </div>
                   <div className="flex gap-2 ml-4">
-<<<<<<< HEAD
-                    <Button variant="outline" size="sm" className="border-border">
-                      Edit
-                    </Button>
-                    <Button variant="outline" size="sm" className="border-border">
-=======
                     <Button 
                       variant="outline" 
                       size="sm" 
@@ -303,7 +240,6 @@ const Developer = () => {
                       className="border-destructive/50"
                       onClick={() => handleDeleteWebhook(webhook.id)}
                     >
->>>>>>> master
                       Delete
                     </Button>
                   </div>
@@ -317,8 +253,4 @@ const Developer = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Developer;
-=======
-export default Developer;
->>>>>>> master

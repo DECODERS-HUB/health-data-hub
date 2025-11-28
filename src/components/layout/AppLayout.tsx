@@ -2,16 +2,11 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
 import { TopBar } from "./TopBar";
 import { Outlet } from "react-router-dom";
-<<<<<<< HEAD
-
-export function AppLayout() {
-=======
 import { useAuth } from "@/hooks/use-auth";
 
 export function AppLayout() {
   const { user } = useAuth();
 
->>>>>>> master
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-background">
@@ -25,8 +20,4 @@ export function AppLayout() {
       </div>
     </SidebarProvider>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> master
