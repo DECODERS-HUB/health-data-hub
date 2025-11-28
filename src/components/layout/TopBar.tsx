@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { Bell, User } from "lucide-react";
-=======
 import { Bell, User, LogOut, Settings } from "lucide-react";
->>>>>>> master
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,10 +10,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from "@/components/ui/badge";
-<<<<<<< HEAD
-
-export function TopBar() {
-=======
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigate } from "react-router-dom";
 
@@ -39,8 +31,6 @@ export function TopBar() {
   const handleNavigateToSettings = () => {
     navigate("/shared/settings");
   };
-
->>>>>>> master
   return (
     <header className="h-16 border-b border-border bg-card px-6 flex items-center justify-between">
       <div className="flex items-center gap-4">
@@ -49,11 +39,7 @@ export function TopBar() {
           <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
             Production
           </Badge>
-<<<<<<< HEAD
-          <span className="text-sm text-muted-foreground">Kwara State HIE</span>
-=======
           <span className="text-sm text-muted-foreground">{getRoleLabel()}</span>
->>>>>>> master
         </div>
       </div>
 
@@ -96,14 +82,6 @@ export function TopBar() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-<<<<<<< HEAD
-            <DropdownMenuLabel>MoH Administrator</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Sign out</DropdownMenuItem>
-=======
             <DropdownMenuLabel>{user?.name || "User Profile"}</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleNavigateToAccount}>
@@ -119,14 +97,9 @@ export function TopBar() {
               <LogOut className="w-4 h-4 mr-2" />
               Sign out
             </DropdownMenuItem>
->>>>>>> master
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
     </header>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> master

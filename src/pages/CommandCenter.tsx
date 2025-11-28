@@ -98,36 +98,6 @@ const CommandCenter = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-<<<<<<< HEAD
-        <MetricCard
-          title="Connected Facilities"
-          value="118"
-          change="+3 this week"
-          changeType="positive"
-          icon={Building2}
-        />
-        <MetricCard
-          title="FHIR Events/Min"
-          value="523"
-          change="+12% from avg"
-          changeType="positive"
-          icon={Activity}
-        />
-        <MetricCard
-          title="API Success Rate"
-          value="99.2%"
-          change="Operational"
-          changeType="positive"
-          icon={CheckCircle2}
-        />
-        <MetricCard
-          title="Active Integrations"
-          value="110"
-          change="93.2% uptime"
-          changeType="positive"
-          icon={TrendingUp}
-        />
-=======
         {renderMetricCard(
           "Connected Facilities",
           metrics?.connectedFacilities.toLocaleString() || "N/A",
@@ -156,7 +126,6 @@ const CommandCenter = () => {
           "93.2% uptime (Mock)",
           "positive"
         )}
->>>>>>> master
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -282,31 +251,6 @@ const CommandCenter = () => {
           </div>
         </div>
         <div className="space-y-3">
-<<<<<<< HEAD
-          {errorLogs.map((log) => (
-            <div
-              key={log.id}
-              className="flex items-start justify-between p-4 rounded-lg bg-secondary border border-border hover:border-primary/50 transition-colors"
-            >
-              <div className="flex items-start gap-3 flex-1">
-                <AlertCircle
-                  className={`w-5 h-5 mt-0.5 ${
-                    log.severity === "high"
-                      ? "text-destructive"
-                      : log.severity === "medium"
-                      ? "text-warning"
-                      : "text-muted-foreground"
-                  }`}
-                />
-                <div className="flex-1">
-                  <p className="text-sm font-medium text-foreground">{log.facility}</p>
-                  <p className="text-sm text-muted-foreground mt-1">{log.error}</p>
-                </div>
-              </div>
-              <span className="text-xs text-muted-foreground whitespace-nowrap ml-4">{log.time}</span>
-            </div>
-          ))}
-=======
           {isLoadingErrors ? (
             <div className="p-4 text-center"><Loader2 className="w-5 h-5 animate-spin text-primary mx-auto" /> Loading errors...</div>
           ) : isErrorErrors || !errorLogs || errorLogs.length === 0 ? (
@@ -340,15 +284,10 @@ const CommandCenter = () => {
               </div>
             ))
           )}
->>>>>>> master
         </div>
       </Card>
     </div>
   );
 };
 
-<<<<<<< HEAD
 export default CommandCenter;
-=======
-export default CommandCenter;
->>>>>>> master

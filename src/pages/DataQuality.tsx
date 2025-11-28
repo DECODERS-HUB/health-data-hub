@@ -323,8 +323,4 @@ const DataQuality = () => {
   );
 };
 
-<<<<<<< HEAD
 export default DataQuality;
-=======
-export default DataQuality;
->>>>>>> master
